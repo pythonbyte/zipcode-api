@@ -1,1 +1,1 @@
-web: gunicorn employeecrud.wsgi
+web: gunicorn zipcodeapi.wsgi
