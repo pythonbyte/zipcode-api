@@ -5,6 +5,8 @@ from rest_framework.decorators import api_view
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
+from .serializers import EmployeeSerializer
+
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response(
@@ -27,6 +29,7 @@ class GetZipCode(generics.CreateAPIView):
     '''
 
     base_url = 'https://api.postmon.com.br/v1/cep/{}'
+    serializer_class = EmployeeSerializer
 
     def post(self, request, zipcode):
         # cleaning the zipcode string
