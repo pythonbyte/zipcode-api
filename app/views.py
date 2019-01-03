@@ -1,8 +1,17 @@
 import requests
 
 from rest_framework import generics, status
+from rest_framework.decorators import api_view
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response(
+        {
+            'Zip Code Api endpoint': '/getzipcode/string:zipcode'
+        }
+    )
 
 
 class GetZipCode(generics.CreateAPIView):

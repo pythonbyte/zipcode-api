@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import GetZipCode
+from app.views import GetZipCode, api_root
 
 urlpatterns = [
+    path('', api_root),
     path('admin/', admin.site.urls),
     path(
         'getzipcode/<zipcode>', GetZipCode.as_view(), name='getzipcode'
