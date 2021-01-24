@@ -1,10 +1,9 @@
-# Onyo Challenge
+# Challenge
 
 # Description
 
-This project is a challenge for a job opening at Onyo. It's a Zipcode API
+This project is a Zipcode API.
 
-Deployed app at Heroku: https://zipcodeapionyo.herokuapp.com/
 
 # Installing
 

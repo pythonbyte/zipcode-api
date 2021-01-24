@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mx=168-g42uqqbm0$fvl8_ob)28@rnr*1!qy!a%bqv)1n06q%f'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -81,16 +81,17 @@ WSGI_APPLICATION = 'zipcodeapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zipcodedb',
-        'USER': 'zipcodeuser',
-        'PASSWORD': 'zipcode789',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME'),
+        'HOST': os.environ.get('DB_HOST'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'PORT': 5432,
         'TEST': {
-            'NAME': 'test_zipcode',
-        },
+            'NAME': 'test_employeecrud',
+        }
     }
 }
+
 
 
 # Password validation
